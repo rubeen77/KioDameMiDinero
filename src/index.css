@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@source "../src/**/*.{jsx,js}";
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Variables de tema ──────────────────────────────────────────────────── */
+
+[data-theme="dark"] {
+  --bg:     #0a0e1a;
+  --card:   #151929;
+  --input:  #1e2640;
+  --border: #1e2640;
+  --nav:    #0f1420;
+  --nav-border: #1e2640;
+  --text-1: #f1f5f9;
+  --text-2: #9ca3af;
+  --text-3: #6b7280;
+}
+
+[data-theme="light"] {
+  --bg:     #f0f4ff;
+  --card:   #ffffff;
+  --input:  #eef1f8;
+  --border: #dde3f0;
+  --nav:    #ffffff;
+  --nav-border: #e2e8f0;
+  --text-1: #0f172a;
+  --text-2: #64748b;
+  --text-3: #94a3b8;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-1);
+  overscroll-behavior: none;
+}
+
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.safe-top    { padding-top:    env(safe-area-inset-top); }
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+.header-gradient {
+  background: linear-gradient(135deg, #c0392b 0%, #8e44ad 50%, #1a237e 100%);
+}
+
+/* Fix date input color en modo claro */
+input[type="date"] { color-scheme: dark; }
+[data-theme="light"] input[type="date"] { color-scheme: light; }
