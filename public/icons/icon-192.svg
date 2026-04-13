@@ -1,4 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-  <rect width="192" height="192" rx="42" fill="#3b82f6"/>
-  <text x="96" y="130" font-size="100" text-anchor="middle" font-family="system-ui">💸</text>
+  <defs>
+    <filter id="glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#42a5f5" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo azul plano -->
+  <rect width="192" height="192" rx="42" fill="#1565c0"/>
+
+  <!-- Texto Kio -->
+  <text x="96" y="100" font-size="72" font-weight="900" text-anchor="middle"
+    font-family="system-ui, -apple-system, sans-serif"
+    fill="white" filter="url(#glow)" letter-spacing="-2">Kio</text>
+
+  <!-- Emoji -->
+  <text x="96" y="158" font-size="52" text-anchor="middle">💸</text>
 </svg>

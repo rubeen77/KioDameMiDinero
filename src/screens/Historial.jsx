@@ -16,13 +16,21 @@ export default function Historial({ transacciones, fijos, onDelete }) {
     return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`
   })
   const [cat, setCat]         = useState('todas')
+  const [tipo, setTipo]       = useState('todos')
   const [confirm, setConfirm] = useState(null)
 
   const filtradas = useMemo(() =>
-    transacciones.filter(t => t.fecha.startsWith(mes) && (cat === 'todas' || t.categoria === cat)),
-    [transacciones, mes, cat]
+    transacciones.filter(t =>
+      t.fecha.startsWith(mes) &&
+      (cat === 'todas' || t.categoria === cat) &&
+      (tipo === 'todos' || t.tipo === tipo)
+    ),
+    [transacciones, mes, cat, tipo]
   )
-  const fijosFiltrados = cat === 'todas' ? fijos : fijos.filter(f => f.categoria === cat)
+  const fijosFiltrados = fijos.filter(f =>
+    (cat === 'todas' || f.categoria === cat) &&
+    (tipo === 'todos' || f.tipo === tipo)
+  )
 
   const totalGasto   = filtradas.filter(t => t.tipo === 'gasto').reduce((s, t) => s + t.cantidad, 0)
   const totalIngreso = filtradas.filter(t => t.tipo === 'ingreso').reduce((s, t) => s + t.cantidad, 0)
@@ -43,6 +51,13 @@ export default function Historial({ transacciones, fijos, onDelete }) {
           className="w-full text-[var(--text-1)] bg-transparent outline-none mt-1 text-sm font-medium">
           {meses.map(m => <option key={m} value={m} className="bg-[var(--card)]">{labelMes(m)}</option>)}
         </select>
+      </div>
+
+      {/* Filtro tipo */}
+      <div className="flex gap-2 mb-3">
+        {[['todos','Todos'], ['gasto','Gastos'], ['ingreso','Ingresos']].map(([t, l]) => (
+          <Chip key={t} active={tipo === t} onClick={() => setTipo(t)}>{l}</Chip>
+        ))}
       </div>
 
       {/* Filtro categoría */}

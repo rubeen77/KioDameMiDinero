@@ -31,9 +31,7 @@ export default function Login() {
     <div className="min-h-screen bg-[var(--bg)] flex flex-col items-center justify-center px-6">
       {/* Logo */}
       <div className="mb-10 text-center">
-        <div className="w-20 h-20 rounded-3xl bg-red-500 flex items-center justify-center text-4xl mx-auto mb-4 shadow-lg shadow-red-500/30">
-          💰
-        </div>
+        <img src="/icons/icon-192.png" alt="Kio" className="w-20 h-20 rounded-3xl mx-auto mb-4 shadow-lg" />
         <h1 className="text-3xl font-bold text-[var(--text-1)]">Kio</h1>
         <p className="text-[var(--text-2)] text-sm mt-1">Dame mi dinero</p>
       </div>
@@ -73,6 +71,7 @@ export default function Login() {
               <label className="text-[10px] text-[var(--text-3)] font-semibold uppercase tracking-widest">Email</label>
               <input type="email" placeholder="tu@email.com" value={email}
                 onChange={e => setEmail(e.target.value)} required autoFocus
+                autoComplete="email" name="email"
                 className="w-full text-base font-semibold text-[var(--text-1)] outline-none mt-0.5 bg-transparent placeholder-gray-700"
               />
             </div>
@@ -81,6 +80,7 @@ export default function Login() {
               <label className="text-[10px] text-[var(--text-3)] font-semibold uppercase tracking-widest">Contraseña</label>
               <input type="password" placeholder="••••••••" value={password}
                 onChange={e => setPassword(e.target.value)} required minLength={6}
+                autoComplete={tab === 'entrar' ? 'current-password' : 'new-password'} name="password"
                 className="w-full text-base font-semibold text-[var(--text-1)] outline-none mt-0.5 bg-transparent placeholder-gray-700"
               />
             </div>

@@ -85,7 +85,7 @@ function FormUnico({ onAdd, setScreen }) {
               }`}
             >
               <span className="text-xl">{cat.emoji}</span>
-              <span className="text-[10px] text-[var(--text-2)] mt-0.5 leading-tight text-center">{cat.label}</span>
+              <span className="text-[10px] text-[var(--text-2)] mt-0.5 leading-tight text-center line-clamp-2 break-words w-full">{cat.label}</span>
             </button>
           ))}
         </div>
@@ -219,7 +219,7 @@ function FormFijo({ onAddFijo, fijos, onDeleteFijo }) {
                 }`}
               >
                 <span className="text-xl">{cat.emoji}</span>
-                <span className="text-[10px] text-[var(--text-2)] mt-0.5 leading-tight text-center">{cat.label}</span>
+                <span className="text-[10px] text-[var(--text-2)] mt-0.5 leading-tight text-center line-clamp-2 break-words w-full">{cat.label}</span>
               </button>
             ))}
           </div>

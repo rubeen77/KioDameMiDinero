@@ -11,7 +11,7 @@ export const CATEGORIAS_GASTO = [
   { id: 'ruleta',         label: 'Ruleta',        emoji: '🎰', color: '#dc2626', bg: '#fef2f2' },
   { id: 'apuestas',       label: 'Apuestas',      emoji: '⚽', color: '#16a34a', bg: '#f0fdf4' },
   { id: 'drogas',         label: 'Drogas',        emoji: '💉', color: '#b91c1c', bg: '#fef2f2' },
-  { id: 'tabaco',         label: 'Tabaco/Snus/vaper',emoji: '🚬', color: '#78716c', bg: '#fafaf9' },
+  { id: 'tabaco',         label: 'Tabaco/Snus/Vaper', emoji: '🚬', color: '#78716c', bg: '#fafaf9' },
   { id: 'fifapoints',     label: 'FIFA Points',   emoji: '⚽🪙', color: '#2563eb', bg: '#eff6ff' },
   { id: 'juegospley',     label: 'Juegos de Pley', emoji: '🎮', color: '#003791', bg: '#e8f0ff' },
   { id: 'otros',          label: 'Otros',         emoji: '📦', color: '#6b7280', bg: '#f9fafb' },
@@ -22,6 +22,8 @@ export const CATEGORIAS_INGRESO = [
   { id: 'paga',     label: 'Paga de mamá', emoji: '💰', color: '#3b82f6', bg: '#eff6ff' },
   { id: 'regalos',  label: 'Regalos',  emoji: '🎁', color: '#f59e0b', bg: '#fffbeb' },
   { id: 'joseo',    label: 'Joseo',    emoji: '🤝', color: '#059669', bg: '#ecfdf5' },
+  { id: 'ruleta',   label: 'Ruleta',   emoji: '🎰', color: '#dc2626', bg: '#fef2f2' },
+  { id: 'apuestas', label: 'Apuestas', emoji: '⚽', color: '#16a34a', bg: '#f0fdf4' },
   { id: 'otros',    label: 'Otros',    emoji: '📦', color: '#6b7280', bg: '#f9fafb' },
 ]
 
