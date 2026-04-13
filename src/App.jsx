@@ -143,7 +143,11 @@ export default function App() {
   const handleAportarMeta = useCallback(async (id, n) => { await aportarMeta(id, n); setMetas(await getMetas()) }, [])
 
   async function handleOnboarding(datos) {
-    await savePerfil(datos)
+    try {
+      await savePerfil(datos)
+    } catch (e) {
+      console.error('savePerfil error:', e)
+    }
     setPerfil(datos)
   }
 
